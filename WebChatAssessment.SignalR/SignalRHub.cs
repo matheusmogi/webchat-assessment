@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.SignalR;
 using WebChatAssessment.CoreBusiness;
-using WebChatAssessment.CoreBusiness.InterfaceDefinitions;
+using WebChatAssessment.CoreBusiness.Contracts;
 
 namespace WebChatAssessment.SignalR;
 

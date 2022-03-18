@@ -3,7 +3,7 @@ using Flurl.Http.Testing;
 using Microsoft.Extensions.Configuration;
 using Moq;
 using NUnit.Framework;
-using WebChatAssessment.CoreBusiness.InterfaceDefinitions;
+using WebChatAssessment.CoreBusiness.Contracts;
 using WebChatAssessment.MessageHandler;
 
 namespace MessageHandler.UnitTests;

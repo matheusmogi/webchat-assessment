@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.SignalR;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using WebChatAssessment.CoreBusiness;
-using WebChatAssessment.CoreBusiness.InterfaceDefinitions;
+using WebChatAssessment.CoreBusiness.Contracts;
 using WebChatAssessment.SignalR;
 
 namespace WebChatAssessment.Bot;

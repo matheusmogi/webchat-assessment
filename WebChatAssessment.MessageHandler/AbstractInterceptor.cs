@@ -1,5 +1,5 @@
 ﻿using WebChatAssessment.CoreBusiness;
-using WebChatAssessment.CoreBusiness.InterfaceDefinitions;
+using WebChatAssessment.CoreBusiness.Contracts;
 
 namespace WebChatAssessment.MessageHandler;
 

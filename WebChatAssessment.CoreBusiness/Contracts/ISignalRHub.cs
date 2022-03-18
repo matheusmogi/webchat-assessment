@@ -1,4 +1,4 @@
-namespace WebChatAssessment.CoreBusiness.InterfaceDefinitions;
+namespace WebChatAssessment.CoreBusiness.Contracts;
 
 public interface ISignalRHub
 {

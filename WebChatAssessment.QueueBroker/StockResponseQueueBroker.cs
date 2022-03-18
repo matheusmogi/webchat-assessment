@@ -1,6 +1,6 @@
 ﻿using Azure.Messaging.ServiceBus;
 using Microsoft.Extensions.Configuration;
-using WebChatAssessment.CoreBusiness.InterfaceDefinitions;
+using WebChatAssessment.CoreBusiness.Contracts;
 
 namespace WebChatAssessment.QueueBroker;
 

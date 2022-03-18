@@ -1,5 +1,5 @@
 using System.Text.RegularExpressions;
-using WebChatAssessment.CoreBusiness.InterfaceDefinitions;
+using WebChatAssessment.CoreBusiness.Contracts;
 
 namespace WebChatAssessment.MessageHandler;
 

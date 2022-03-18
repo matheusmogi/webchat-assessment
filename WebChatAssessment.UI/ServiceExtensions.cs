@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.SignalR;
 using WebChatAssessment.Bot;
 using WebChatAssessment.CoreBusiness;
-using WebChatAssessment.CoreBusiness.InterfaceDefinitions;
+using WebChatAssessment.CoreBusiness.Contracts;
 using WebChatAssessment.MessageHandler;
 using WebChatAssessment.QueueBroker;
 

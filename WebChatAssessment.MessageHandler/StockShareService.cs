@@ -1,7 +1,7 @@
 using System.Text;
 using Flurl.Http;
 using Microsoft.Extensions.Configuration;
-using WebChatAssessment.CoreBusiness.InterfaceDefinitions;
+using WebChatAssessment.CoreBusiness.Contracts;
 
 namespace WebChatAssessment.MessageHandler;
 

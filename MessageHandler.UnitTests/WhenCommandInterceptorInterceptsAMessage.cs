@@ -1,6 +1,6 @@
 using Moq;
 using NUnit.Framework;
-using WebChatAssessment.CoreBusiness.InterfaceDefinitions;
+using WebChatAssessment.CoreBusiness.Contracts;
 using WebChatAssessment.MessageHandler;
 
 namespace MessageHandler.UnitTests;
