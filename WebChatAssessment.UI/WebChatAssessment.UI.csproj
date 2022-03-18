@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\WebChatAssessment.Bot\WebChatAssessment.Bot.csproj" />
+      <ProjectReference Include="..\WebChatAssessment.CoreBusiness\WebChatAssessment.CoreBusiness.csproj" />
+      <ProjectReference Include="..\WebChatAssessment.MessageHandler\WebChatAssessment.MessageHandler.csproj" />
+      <ProjectReference Include="..\WebChatAssessment.QueueBroker\WebChatAssessment.QueueBroker.csproj" />
+      <ProjectReference Include="..\WebChatAssessment.SignalR\WebChatAssessment.SignalR.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Hubs" />
+    </ItemGroup>
+
+</Project>
