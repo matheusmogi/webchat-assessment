@@ -4,8 +4,9 @@ using WebChatAssessment.UI;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddSignalR();
-builder.WebHost.ConfigureServices(service => { service.AddHostedService<QueryStockWorker>(); });
 builder.Services.RegisterServices();
+
+builder.WebHost.ConfigureServices(service => { service.AddHostedService<QueryStockWorker>(); });
 
 builder.Services.AddRazorPages();
 

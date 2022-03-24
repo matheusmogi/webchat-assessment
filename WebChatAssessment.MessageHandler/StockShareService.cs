@@ -14,24 +14,28 @@ public class StockShareService : IStockShareService
     {
         this.stockResponseBroker = stockResponseBroker;
         stockServiceUrl = configuration["StockServiceUrl"];
-
     }
+
     public async Task GetStockShareDetails(string code)
     {
         var stockUrlTransformed = stockServiceUrl.Replace("#code#", code);
         var stockResponse = await stockUrlTransformed.GetStreamAsync();
         var result = GetValuesFromStream(stockResponse);
-        var responseMessage = CreateResponseMessage(result.FirstOrDefault());
+        var responseMessage = CreateResponseMessage(result);
         await stockResponseBroker.SendMessage(responseMessage);
     }
-    
-    private static string CreateResponseMessage(string? row)
+
+    private static string CreateResponseMessage(IReadOnlyList<string> rows)
     {
-        var result = row?.Split(",");
+        if (rows.Count < 2 || rows[1].Split(",").Length < 7)
+            return "Stock not found";
+
+        var row = rows[1];
+        var result = row.Split(",");
         return $"{result?[0]} quote is $${result?[6]} per share";
     }
 
-    private static  List<string?> GetValuesFromStream(Stream stockResponse)
+    private static List<string?> GetValuesFromStream(Stream stockResponse)
     {
         stockResponse.Position = 0;
         var rows = new List<string?>();

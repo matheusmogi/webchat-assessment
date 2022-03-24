@@ -4,13 +4,13 @@ using WebChatAssessment.CoreBusiness.Contracts;
 
 namespace WebChatAssessment.QueueBroker;
 
-public abstract class StockResponseQueueBroker : IStockResponseQueueBroker
+public class StockResponseQueueBroker : IStockResponseQueueBroker
 {
     private readonly ServiceBusSender sender;
     private readonly ServiceBusReceiver receiver;
     private const string QueueName = "stock-response";
 
-    protected StockResponseQueueBroker(IConfiguration configuration)
+    public StockResponseQueueBroker(IConfiguration configuration)
     {
         var serviceBusConnectionString = configuration["ConnectionStrings:ServiceBus"];
         var client = new ServiceBusClient(serviceBusConnectionString);
@@ -27,8 +27,8 @@ public abstract class StockResponseQueueBroker : IStockResponseQueueBroker
     public async Task<string> ReceiveMessage()
     {
         var message = await receiver.ReceiveMessageAsync();
-        var content= message.Body.ToString();
+        var content= message.Body?.ToString();
         await receiver.CompleteMessageAsync(message);
-        return content.Replace("\"",string.Empty);
+        return content!=null? content.Replace("\"",string.Empty):string.Empty;
     }
 }
